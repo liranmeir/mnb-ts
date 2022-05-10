@@ -68,10 +68,10 @@
 <div class="grid gap-4 overflow-y-scroll bg-blue">
 	{#each videos as video}
 		<div
-			class="grid justify-center text-white text-sm text-center font-bold leading-6 bg-stripes-violet rounded-lg"
+			class="rounded-lg"
 		>
 			<iframe
-				class="p-2 rounded-md shadow-lg bg-yellow"
+				class="aspect-w-16 aspect-h-9 p-2 rounded-md shadow-lg bg-yellow "
 				src={video.url}
 				width="100%"
 				height="100%"
