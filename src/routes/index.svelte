@@ -43,58 +43,48 @@
 	// 	fakeHeader.classList.remove('scale-y-75');
 	// 	fakeHeader.classList.remove('shadow-xl');
 	// });
+
+	let y = 0;
 </script>
 
-<!-- <main class="bg-blue flex flex-col h-screen p-4">
-	<header class="sticky h-48">
-        <div class="font-bold text-yellow text-8xl flex justify-center sticky top-0">MNB</div>
-    </header>
-	<div class="grid gap-4 overflow-y-scroll">
-		{#each videos as video}
-			<div
-				class="grid justify-center text-white text-sm text-center font-bold leading-6 bg-stripes-violet rounded-lg"
-			>
-				<embed
-					class="p-4 rounded-lg shadow-lg bg-yellow max-x-full max-y-full"
-					src={video.url}
-					title="Everytime You Go Away - Paul Young"
-				/>
-			</div>
-		{/each}
-	</div>
-</main> -->
-<div bind:this={box} on:scroll={parseScroll}>
-	<div
-		id="fake-header"
-		class="bg-white sticky top-0 h-32 transform transition duration-500 origin-top"
-	/>
+<svelte:window bind:scrollY={y} />
 
-	<header
-		id="header"
-		class="-mt-28 transition h-24 grid grid-flow-col items-center justify-between px-8 gap-8 sticky top-4 z-30 bg-white transform transition duration-500"
-	>
-		<p>Some text here</p>
+<div
+	class:scale-y-75={y > 64}
+	class:shadow-xl={y > 64}
+	class="bg-white sticky top-0 h-32 transform transition duration-500 origin-top"
+/>
 
-		<img
-			id="logo"
-			class="h-10 transform scale-125 transition duration-500"
-			src="./logo.svg"
-			alt=""
-		/>
+<header
+	class:-translate-y-4={y > 64}
+	class="-mt-28 transition h-24 grid grid-flow-col items-center justify-between px-8 gap-8 sticky top-4 z-30 bg-white transform transition duration-500"
+>
+	<p>Some text here</p>
 
-		<p>Some text there</p>
-	</header>
-	<div class="grid gap-4 overflow-y-scroll bg-blue">
-		{#each videos as video}
-			<div
-				class="grid justify-center text-white text-sm text-center font-bold leading-6 bg-stripes-violet rounded-lg"
-			>
-				<embed
-					class="p-4 rounded-lg shadow-lg bg-yellow max-x-full max-y-full"
-					src={video.url}
-					title="Everytime You Go Away - Paul Young"
-				/>
-			</div>
-		{/each}
-	</div>
+	<img id="logo" class="h-10 transform scale-125 transition duration-500" src="./logo.svg" alt="" />
+
+	<p>Some text there</p>
+</header>
+<div class="grid gap-4 overflow-y-scroll bg-blue">
+	{#each videos as video}
+		<div
+			class="grid justify-center text-white text-sm text-center font-bold leading-6 bg-stripes-violet rounded-lg"
+		>
+			<iframe
+				class="p-2 rounded-md shadow-lg bg-yellow"
+				src={video.url}
+				width="100%"
+				height="100%"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen
+			/>
+		</div>
+	{/each}
 </div>
+
+<style>
+	.shrink {
+	}
+</style>
