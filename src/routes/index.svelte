@@ -13,37 +13,6 @@
 	};
 	const videos = new Array(10).fill(vid);
 
-	/**
-	 * @type {HTMLDivElement}
-	 */
-	let box;
-	let yScroll = 0;
-
-	function parseScroll() {
-		debugger;
-		yScroll = box.scrollTop;
-	}
-	// const header = document.querySelector('#header');
-	// const fakeHeader = document.querySelector('#fake-header');
-	// const logo = document.querySelector('#logo');
-
-	// window.addEventListener('scroll', () => {
-	// 	if (window.scrollY > 64) {
-	// 		header.classList.add('-translate-y-4');
-	// 		logo.classList.remove('scale-125');
-
-	// 		fakeHeader.classList.add('scale-y-75');
-	// 		fakeHeader.classList.add('shadow-xl');
-	// 		return;
-	// 	}
-
-	// 	header.classList.remove('-translate-y-4');
-	// 	logo.classList.add('scale-125');
-
-	// 	fakeHeader.classList.remove('scale-y-75');
-	// 	fakeHeader.classList.remove('shadow-xl');
-	// });
-
 	let y = 0;
 </script>
 
@@ -65,16 +34,13 @@
 
 	<p>Some text there</p>
 </header>
-<div class="grid gap-4 overflow-y-scroll bg-blue">
+<div class="grid gap-8 overflow-y-scroll bg-blue px-4">
 	{#each videos as video}
-		<div
-			class="rounded-lg"
-		>
+		<div class="aspect-w-16 aspect-h-9 rounded-md shadow-lg bg-yellow">
 			<iframe
-				class="aspect-w-16 aspect-h-9 p-2 rounded-md shadow-lg bg-yellow "
 				src={video.url}
-				width="100%"
-				height="100%"
+				width="90%"
+				height="90%"
 				title="YouTube video player"
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
