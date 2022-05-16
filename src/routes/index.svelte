@@ -28,12 +28,12 @@
 	class:-translate-y-4={y > 64}
 	class="-mt-28 transition h-24 grid grid-flow-col items-center justify-between px-8 gap-8 sticky top-4 z-30 bg-white transform transition duration-500"
 >
-	<p>Some text here</p>
+	<a href="/picker">Player Picker</a>
 
 	<img id="logo" class="h-10 transform scale-125 transition duration-500" src="./logo.svg" alt="" />
-
-	<p>Some text there</p>
 </header>
+
+<div />
 <div class="grid gap-8 overflow-y-scroll bg-blue px-4">
 	{#each videos as video}
 		<div class="aspect-w-16 aspect-h-9 rounded-md shadow-lg bg-yellow">
@@ -50,6 +50,14 @@
 	{/each}
 </div>
 
+<!-- 
+		1.present all the players
+		2.add border to the img
+		3.each avatar has a state of selected or not
+		4.when the user clicks on the avatar, it should change the state to sit or play
+		5.add input of how many sits 
+
+		-->
 <style>
 	.shrink {
 	}
