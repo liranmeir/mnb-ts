@@ -104,7 +104,7 @@
 	<title>Picker</title>
 </svelte:head>
 <div class="grid gap-8 overflow-y-scroll bg-blue px-4">
-	<h1>Roster</h1>
+	<h1 class="text-white text-4xl">Roster</h1>
 	<div>
 		<div>
 			{#each playersArray as player}
@@ -114,7 +114,7 @@
 	</div>
 	<div>
 		<button
-			class="mt-8 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded"
+			class="mt-8 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded text-white text-4xl border-4"
 			on:click={onclick}>Who plays?</button
 		>
 	</div>
