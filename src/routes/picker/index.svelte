@@ -103,10 +103,10 @@
 <svelte:head>
 	<title>Picker</title>
 </svelte:head>
-<div class="grid gap-8 overflow-y-scroll bg-blue px-4">
-	<h1>Roster</h1>
+<div class="grid grid-rows-5">
+	<h1 class="text-white text-4xl">Roster</h1>
 	<div>
-		<div>
+		<div class="flex flex-row ">
 			{#each playersArray as player}
 				<img alt="" src={player.imgUrl} class="h-12 w-12 rounded-full" />
 			{/each}
@@ -114,11 +114,12 @@
 	</div>
 	<div>
 		<button
-			class="mt-8 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded"
+			class="mt-8 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded text-black text-4xl border-4"
 			on:click={onclick}>Who plays?</button
 		>
+		<button class="btn"> Button </button>
 	</div>
-	<div>
+	<div class="flex flex-row ">
 		{#each players as player}
 			<img alt="" src={player.imgUrl} class="h-12 w-12 rounded-full" />
 		{/each}
