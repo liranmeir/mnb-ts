@@ -103,7 +103,7 @@
 <svelte:head>
 	<title>Picker</title>
 </svelte:head>
-<div class="grid grid-rows-5">
+<div class="grid grid-rows-5 bg-blue">
 	<h1 class="text-white text-4xl">Roster</h1>
 	<div>
 		<div class="flex flex-row ">
@@ -125,3 +125,12 @@
 		{/each}
 	</div>
 </div>
+
+<!-- 
+		1.present all the players
+		2.add border to the img
+		3.each avatar has a state of selected or not
+		4.when the user clicks on the avatar, it should change the state to sit or play
+		5.add input of how many sits 
+
+		-->
