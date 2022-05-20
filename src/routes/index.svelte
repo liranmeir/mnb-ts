@@ -26,7 +26,7 @@
 
 <header
 	class:-translate-y-4={y > 64}
-	class="-mt-28 transition h-24 grid grid-flow-col items-center justify-between px-8 gap-8 sticky top-4 z-30 bg-white transform transition duration-500"
+	class="-mt-28 transition h-28 grid grid-flow-col items-center justify-between px-8 gap-8 sticky top-4 z-30 bg-white transform transition duration-500"
 >
 	<a href="/picker">Player Picker</a>
 
