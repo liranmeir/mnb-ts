@@ -11,7 +11,6 @@
 
 <svelte:window bind:scrollY={y} />
 
-
 <header
 	class:-translate-y-4={y > 64}
 	class="h-20 grid grid-flow-col items-center justify-between px-8 gap-8 sticky top-0 bg-white transform transition duration-500"
