@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
+	import type { Video } from 'src/types/Video';
+
 	import Card from '../components/Card.svelte';
 	import Layout from './__layout.svelte';
-	const vid = {
-		url: 'https://www.youtube.com/embed/trggwXMMsYw?autoplay=0'
-	};
-	const videos = new Array(10).fill(vid);
+
+	export let videos: Video[] = [];
 
 	let y = 0;
 </script>
