@@ -1,14 +1,25 @@
-import { getPlaylistVideoIds } from './../googleService';
+import { getPlaylistVideos } from './../googleService';
 
 /** @type {import('./../types/Video').RequestHandler} */
 export async function get() {
-	const ids = await getPlaylistVideoIds();
+	const playlistVideos = await getPlaylistVideos();
+	console.log(playlistVideos);
 
-	const videos = ids.map((id) => ({
+	const videos = playlistVideos.map(({ id, ...rest }) => ({
+		...rest,
 		url: `https://www.youtube.com/embed/${id}?autoplay=0`
 	}));
 
+	const sortedVideos = videos.sort((a, b) => {
+		const aDate = new Date(a.publishedAt);
+		const bDate = new Date(b.publishedAt);
+
+		return bDate.getTime() - aDate.getTime();
+	});
+
+	// console.log(videos);
+
 	return {
-		body: { videos }
+		body: { videos: sortedVideos }
 	};
 }
