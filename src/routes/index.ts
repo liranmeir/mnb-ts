@@ -7,7 +7,7 @@ export async function get() {
 
 	const videos = playlistVideos.map(({ id, ...rest }) => ({
 		...rest,
-		url: `https://www.youtube.com/embed/${id}?autoplay=0`
+		url: `https://www.youtube.com/embed/${id}?autoplay=0&modestbranding=1&showinfo=0`
 	}));
 
 	const sortedVideos = videos.sort((a, b) => {

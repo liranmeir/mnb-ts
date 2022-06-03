@@ -1,22 +1,19 @@
 <script lang="ts">
 	export let url: string;
 	export let publishedAt: string;
+	let publishText = 'Published @ ' + new Date(publishedAt).toLocaleDateString('en-GB');
 </script>
 
-<div class="rounded-md shadow-md bg-yellow px-2 py-2">
+<div class="rounded-md shadow-md bg-yellow px-2 py-2 border-1 flex flex-col">
 	<iframe
+		class="flex"
 		src={url}
-		width="100%"
-		height="100%"
 		title="YouTube video player"
 		frameborder="0"
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 		allowfullscreen
 	/>
-	<div>
-		<h3 class="text-xl font-bold text-white">
-			{new Date(publishedAt).toLocaleDateString('en-GB')}
-		</h3>
+	<div class="text-xs text-white text-right pt-2">
+		{publishText}
 	</div>
-	<div class="h-10" />
 </div>
