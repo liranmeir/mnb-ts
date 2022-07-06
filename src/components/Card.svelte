@@ -6,6 +6,7 @@
 
 <div class="rounded-md shadow-md bg-yellow px-2 py-2 border-1 flex flex-col">
 	<iframe
+		loading="lazy"
 		class="flex"
 		src={url}
 		title="YouTube video player"
