@@ -1,8 +1,8 @@
-import { getPlaylistVideos } from './../googleService';
+import { getPlaylistVideosFromBoth } from './../googleService';
 
 /** @type {import('./../types/Video').RequestHandler} */
 export async function get() {
-	const playlistVideos = await getPlaylistVideos();
+	const playlistVideos = await getPlaylistVideosFromBoth();
 	console.log(playlistVideos);
 
 	const videos = playlistVideos.map(({ id, ...rest }) => ({

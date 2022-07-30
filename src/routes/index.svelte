@@ -18,6 +18,7 @@
 	<!-- <a href="/picker">Player Picker</a> -->
 
 	<img
+		class:-translate-x-0={y > 64}
 		id="logo"
 		class="h-10 transform scale-100 transition duration-500"
 		class:scale-75={y > 64}
