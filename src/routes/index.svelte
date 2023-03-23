@@ -29,6 +29,6 @@
 
 <div class="grid gap-8 overflow-y-scroll bg-blue p-4 pt-4 grid-cols-1 md:grid-cols-3">
 	{#each videos as video, index}
-		<Card {...video} videoNumber={videos.length - index + 1} />
+		<Card {...video} videoNumber={videos.length - index} />
 	{/each}
 </div>
