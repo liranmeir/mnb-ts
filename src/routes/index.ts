@@ -3,7 +3,6 @@ import { getPlaylistVideosFromBoth } from './../googleService';
 /** @type {import('./../types/Video').RequestHandler} */
 export async function get() {
 	const playlistVideos = await getPlaylistVideosFromBoth();
-	console.log(playlistVideos);
 
 	const videos = playlistVideos.map(({ id, ...rest }) => ({
 		...rest,
@@ -16,8 +15,6 @@ export async function get() {
 
 		return bDate.getTime() - aDate.getTime();
 	});
-
-	// console.log(videos);
 
 	return {
 		body: { videos: sortedVideos }

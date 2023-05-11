@@ -12,11 +12,14 @@ const googleClient = google.youtube({
 const getPlaylistVideos = async (playlistId: string) => {
 	try {
 		const res = await googleClient.playlistItems.list({
-			part: ['snippet', 'contentDetails'],
+			part: ['snippet', 'contentDetails', 'status'],
 			maxResults: 100,
 			playlistId
 		});
-		const videos = res?.data?.items?.map((item) => ({
+		const visibleItems =
+			res.data.items?.filter((x) => x.status?.privacyStatus !== 'privacyStatusUnspecified') || [];
+
+		const videos = visibleItems.map((item) => ({
 			id: item?.contentDetails?.videoId,
 			title: item?.snippet?.title,
 			description: item?.snippet?.description,
