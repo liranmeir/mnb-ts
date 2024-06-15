@@ -26,6 +26,7 @@ const getPlaylistVideos = async (playlistId: string) => {
 			publishedAt: item?.snippet?.publishedAt
 		})) as Video[];
 
+		// console.log(visibleItems[0].snippet?.thumbnails);
 		return videos;
 	} catch (error) {
 		console.log(error);
